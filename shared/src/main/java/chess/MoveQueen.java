@@ -4,12 +4,18 @@ import java.util.Collection;
 import java.util.List;
 
 public class MoveQueen extends PieceMovesCalc{
-    public MoveQueen(ChessBoard board) {
+    public MoveQueen (ChessBoard board) {
         super(board);
     }
-
-    @Override
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
-        return List.of();
+        Collection<ChessMove> moves = findLineMoves(myPosition, 1, 1);
+        moves.addAll(findLineMoves(myPosition, -1, 1));
+        moves.addAll(findLineMoves(myPosition, -1, -1));
+        moves.addAll(findLineMoves(myPosition, 1, -1));
+        moves.addAll(findLineMoves(myPosition, 0, 1));
+        moves.addAll(findLineMoves(myPosition, 0, -1));
+        moves.addAll(findLineMoves(myPosition, -1, 0));
+        moves.addAll(findLineMoves(myPosition, 1, 0));
+        return moves;
     }
 }
