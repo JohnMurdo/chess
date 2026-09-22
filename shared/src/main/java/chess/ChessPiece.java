@@ -74,6 +74,8 @@ public class ChessPiece {
             return new MoveBishop(board).pieceMoves(myPosition);
         } else if (piece.getPieceType() == PieceType.ROOK) {
             return new MoveRook(board).pieceMoves(myPosition);
+        }else if (piece.getPieceType() == PieceType.QUEEN) {
+            return new MoveQueen(board).pieceMoves(myPosition);
         }
         return new ArrayList<>();
     }
