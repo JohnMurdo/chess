@@ -1,15 +1,16 @@
 package chess;
 
 import java.util.Collection;
-import java.util.List;
 
 public class MoveRook extends PieceMovesCalc{
-    public MoveRook(ChessBoard board) {
+    public MoveRook (ChessBoard board) {
         super(board);
     }
-
-    @Override
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
-        return List.of();
+        Collection<ChessMove> moves = findLineMoves(myPosition, 0, 1);
+        moves.addAll(findLineMoves(myPosition, 0, -1));
+        moves.addAll(findLineMoves(myPosition, -1, 0));
+        moves.addAll(findLineMoves(myPosition, 1, 0));
+        return moves;
     }
 }

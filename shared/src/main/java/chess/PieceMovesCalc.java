@@ -29,5 +29,6 @@ public abstract class  PieceMovesCalc {
         }
         return validMoves;
     }
+//    public movesWithOffsets;
     public abstract Collection<ChessMove> pieceMoves(ChessPosition myPosition);
 }

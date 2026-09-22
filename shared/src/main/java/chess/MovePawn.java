@@ -8,6 +8,7 @@ public class MovePawn extends PieceMovesCalc{
         super(board);
     }
 
+
     @Override
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
         return List.of();
