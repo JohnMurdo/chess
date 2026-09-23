@@ -48,13 +48,13 @@ private ChessPiece[][] board = new ChessPiece[8][8];
     public void resetBoard() {
         // write a wipe board later
         int x = 1;
-        int y = 1;
         while (x <= 8){
+            int y = 1;
             while (y <= 8) {
                 addPiece(new ChessPosition(x,y), null);
-                y = y+1;
+                y++;
             }
-            x = x+1;
+            x++;
         }
         addPiece(new ChessPosition(1,1), new ChessPiece(WHITE, ROOK));
         addPiece(new ChessPosition(1,2), new ChessPiece(WHITE, KNIGHT));
@@ -79,6 +79,7 @@ private ChessPiece[][] board = new ChessPiece[8][8];
         addPiece(new ChessPosition(8,5), new ChessPiece(BLACK, KING));
         addPiece(new ChessPosition(8,6), new ChessPiece(BLACK, BISHOP));
         addPiece(new ChessPosition(8,7), new ChessPiece(BLACK, KNIGHT));
+        addPiece(new ChessPosition(8,8), new ChessPiece(BLACK, ROOK));
         addPiece(new ChessPosition(7,1), new ChessPiece(BLACK, PAWN));
         addPiece(new ChessPosition(7,2), new ChessPiece(BLACK, PAWN));
         addPiece(new ChessPosition(7,3), new ChessPiece(BLACK, PAWN));
