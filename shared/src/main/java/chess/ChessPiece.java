@@ -80,6 +80,8 @@ public class ChessPiece {
             return new MoveKnight(board).pieceMoves(myPosition);
         }else if (piece.getPieceType() == PieceType.KING) {
             return new MoveKing(board).pieceMoves(myPosition);
+        }else if (piece.getPieceType() == PieceType.PAWN) {
+            return new MovePawn(board).pieceMoves(myPosition);
         }
         // for pawn:
         //  check start (remember color matters)

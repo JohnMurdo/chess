@@ -18,7 +18,7 @@ public class ChessPosition {
     };
 
     public ChessPosition offset(int xOff, int yOff) {
-        return new ChessPosition(row + xOff, col + yOff);
+        return new ChessPosition(row + yOff, col + xOff);
     }
 
     public ChessPosition(int row, int col) {

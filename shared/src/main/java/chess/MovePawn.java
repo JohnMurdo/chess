@@ -27,7 +27,7 @@ public class MovePawn extends PieceMovesCalc{
             } else {
                 ChessMove pos = new ChessMove(myPosition, forward, null);
                 validMoves.add(pos);
-                if (dubForward.isValid() && board.getPiece(dubForward) == null && dubForward.getRow() == startRow) {
+                if (dubForward.isValid() && board.getPiece(dubForward) == null && myPosition.getRow() == startRow) {
                     ChessMove pos2 = new ChessMove(myPosition, dubForward, null);
                     validMoves.add(pos2);
                 }
