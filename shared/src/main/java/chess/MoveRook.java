@@ -7,10 +7,10 @@ public class MoveRook extends PieceMovesCalc{
         super(board);
     }
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
-        Collection<ChessMove> moves = findLineMoves(myPosition, 0, 1);
-        moves.addAll(findLineMoves(myPosition, 0, -1));
-        moves.addAll(findLineMoves(myPosition, -1, 0));
-        moves.addAll(findLineMoves(myPosition, 1, 0));
+        Collection<ChessMove> moves = findValidLines(myPosition, 0, 1);
+        moves.addAll(findValidLines(myPosition, 0, -1));
+        moves.addAll(findValidLines(myPosition, -1, 0));
+        moves.addAll(findValidLines(myPosition, 1, 0));
         return moves;
     }
 }

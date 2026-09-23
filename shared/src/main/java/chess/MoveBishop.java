@@ -7,10 +7,10 @@ public class MoveBishop extends PieceMovesCalc {
         super(board);
     }
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
-        Collection<ChessMove> moves = findLineMoves(myPosition, 1, 1);
-        moves.addAll(findLineMoves(myPosition, -1, 1));
-        moves.addAll(findLineMoves(myPosition, -1, -1));
-        moves.addAll(findLineMoves(myPosition, 1, -1));
+        Collection<ChessMove> moves = findValidLines(myPosition, 1, 1);
+        moves.addAll(findValidLines(myPosition, -1, 1));
+        moves.addAll(findValidLines(myPosition, -1, -1));
+        moves.addAll(findValidLines(myPosition, 1, -1));
         return moves;
     }
 

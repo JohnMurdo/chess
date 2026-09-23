@@ -1,5 +1,6 @@
 package chess;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -8,8 +9,18 @@ public class MoveKnight extends PieceMovesCalc{
         super(board);
     }
 
-    @Override
     public Collection<ChessMove> pieceMoves(ChessPosition myPosition) {
-        return List.of();
+        List<int[]> offsets = new ArrayList<>();
+        offsets.add(new int[] {1,2});
+        offsets.add(new int[] {-1,2});
+        offsets.add(new int[] {1,-2});
+        offsets.add(new int[] {-1,-2});
+        offsets.add(new int[] {2,1});
+        offsets.add(new int[] {2,-1});
+        offsets.add(new int[] {-2,1});
+        offsets.add(new int[] {-2,-1});
+
+
+        return movesWithOffsets(myPosition, offsets);
     }
 }

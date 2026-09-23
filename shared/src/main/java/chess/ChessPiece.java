@@ -76,7 +76,16 @@ public class ChessPiece {
             return new MoveRook(board).pieceMoves(myPosition);
         }else if (piece.getPieceType() == PieceType.QUEEN) {
             return new MoveQueen(board).pieceMoves(myPosition);
+        } else if (piece.getPieceType() == PieceType.KNIGHT) {
+            return new MoveKnight(board).pieceMoves(myPosition);
+        }else if (piece.getPieceType() == PieceType.KING) {
+            return new MoveKing(board).pieceMoves(myPosition);
         }
+        // for pawn:
+        //  check start (remember color matters)
+        //  check kills
+        //  check promotion (remember color matters)
+        //
         return new ArrayList<>();
     }
 }
