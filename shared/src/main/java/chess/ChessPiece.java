@@ -1,6 +1,5 @@
 package chess;
 
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
@@ -70,24 +69,25 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         ChessPiece piece = board.getPiece(myPosition);
+        Collection<ChessMove> pieceMoves = new ArrayList<>();
         if (piece.getPieceType() == PieceType.BISHOP) {
-            return new MoveBishop(board).pieceMoves(myPosition);
+            pieceMoves = new MoveBishop(board).pieceMoves(myPosition);
         } else if (piece.getPieceType() == PieceType.ROOK) {
-            return new MoveRook(board).pieceMoves(myPosition);
+            pieceMoves =  new MoveRook(board).pieceMoves(myPosition);
         }else if (piece.getPieceType() == PieceType.QUEEN) {
-            return new MoveQueen(board).pieceMoves(myPosition);
+            pieceMoves =  new MoveQueen(board).pieceMoves(myPosition);
         } else if (piece.getPieceType() == PieceType.KNIGHT) {
-            return new MoveKnight(board).pieceMoves(myPosition);
+            pieceMoves =  new MoveKnight(board).pieceMoves(myPosition);
         }else if (piece.getPieceType() == PieceType.KING) {
-            return new MoveKing(board).pieceMoves(myPosition);
+            pieceMoves =  new MoveKing(board).pieceMoves(myPosition);
         }else if (piece.getPieceType() == PieceType.PAWN) {
-            return new MovePawn(board).pieceMoves(myPosition);
+            pieceMoves =  new MovePawn(board).pieceMoves(myPosition);
         }
         // for pawn:
         //  check start (remember color matters)
         //  check kills
         //  check promotion (remember color matters)
         //
-        return new ArrayList<>();
+        return pieceMoves;
     }
 }

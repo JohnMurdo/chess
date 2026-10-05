@@ -48,5 +48,5 @@ public abstract class  PieceMovesCalc {
     }
     // at end add on
 
-    public abstract Collection<ChessMove> pieceMoves(ChessPosition myPosition);
+//    public abstract Collection<ChessMove> pieceMoves(ChessPosition myPosition);
 }

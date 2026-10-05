@@ -43,7 +43,7 @@ private ChessPiece[][] board = new ChessPiece[8][8];
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
-        // write a wipe board later
+        // do loop later
         board = new ChessPiece[8][8];
         addPiece(new ChessPosition(1,1), new ChessPiece(WHITE, ROOK));
         addPiece(new ChessPosition(1,2), new ChessPiece(WHITE, KNIGHT));
