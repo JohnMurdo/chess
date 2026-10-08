@@ -9,9 +9,11 @@ import java.util.Collection;
  * signature of the existing methods.
  */
 public class ChessGame {
-    private TeamColor turn = TeamColor.WHITE;
+    private TeamColor turn;
+    private ChessBoard board;
     public ChessGame() {
-
+        this.turn = TeamColor.WHITE;
+        this.board = new ChessBoard();
     }
 
     /**
@@ -66,7 +68,8 @@ public class ChessGame {
      * @return True if the specified team is in check
      */
     public boolean isInCheck(TeamColor teamColor) {
-        throw new RuntimeException("Not implemented");
+//        check list of moves and run each. if king is being attacked, return true
+        return true;
     }
 
     /**
@@ -76,7 +79,11 @@ public class ChessGame {
      * @return True if the specified team is in checkmate
      */
     public boolean isInCheckmate(TeamColor teamColor) {
-        throw new RuntimeException("Not implemented");
+        if (isInCheck(teamColor)) {
+//            check is list of moves is 0
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -87,7 +94,8 @@ public class ChessGame {
      * @return True if the specified team is in stalemate, otherwise false
      */
     public boolean isInStalemate(TeamColor teamColor) {
-        throw new RuntimeException("Not implemented");
+//        return true if list of moves is zero, and if not in check
+        return true;
     }
 
     /**
@@ -96,7 +104,7 @@ public class ChessGame {
      * @param board the new board to use
      */
     public void setBoard(ChessBoard board) {
-        throw new RuntimeException("Not implemented");
+        this.board = board;
     }
 
     /**
