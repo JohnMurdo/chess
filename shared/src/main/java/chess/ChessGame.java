@@ -70,6 +70,7 @@ public class ChessGame {
      * startPosition
      */
     public Collection<ChessMove> validMoves(ChessPosition startPosition) {
+//        check checkmates first
         throw new RuntimeException("Not implemented");
     }
 
